@@ -18,4 +18,13 @@ Withdrawal: Users submit a proof to withdraw funds to a different address, break
 
 Obfuscation: Leverage off-chain coordination or time delays to mix transactions from multiple users.
 
+Technical Challenges
+Solana’s Transparency: Solana’s blockchain is public, and all transactions (even to a program) are visible. You’d need to ensure the program’s logic sufficiently obfuscates the link between deposits and withdrawals.
+
+Proof Systems: For stronger privacy, integrate a cryptographic proof system like zk-SNARKs. Libraries like bellman or arkworks can help, but they’re computationally heavy and may clash with Solana’s fast execution model.
+
+Account Management: Solana requires accounts to be pre-allocated and rent-exempt, so your program needs to handle account creation and funding efficiently.
+
+Scalability: Mixing requires multiple users to be effective. A single-user mixer is easily traceable.
+
 
